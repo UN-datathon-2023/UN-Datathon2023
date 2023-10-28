@@ -50,6 +50,9 @@ Amazon SageMaker is a powerful tool for building, training, and deploying machin
 - [Amazon SageMaker Overview](https://www.youtube.com/watch?v=JqCIdrGdAvg&t=403s&ab_channel=UNBigData)
 - [A Guide to AIS Data Utilization](https://youtu.be/KKD6iFJjC7k)
 
+## Join Discord
+
+- [here](https://discord.gg/3XtmWkRFUx)
 
 ## Table of Contents
 
