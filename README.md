@@ -2,7 +2,7 @@
 # Project Name
 # Main Resorce:
 
-UN Statistics WIKI (https://unstats.un.org/wiki/display/UNDatathon2023/Getting+Started+with+UN+Datathon+2023)
+[UN Statistics WIKI] (https://unstats.un.org/wiki/display/UNDatathon2023/Getting+Started+with+UN+Datathon+2023)
 
 AWS Office hours:
 # Week 1: Introduction to AWS and the UN Datathon
