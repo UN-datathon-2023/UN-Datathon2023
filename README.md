@@ -162,11 +162,12 @@ Clone this repository using Git:
 $ git clone https://github.com/debsankarde/UN-Datathon2023.git
 $ cd UN-Datathon2023
 $ npm install
-
+```
 
 Install the required libraries:
+```shell
 pip install -r requirements.txt
-
+```
 
 ### Usage
 
