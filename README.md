@@ -64,6 +64,7 @@ Amazon SageMaker is a powerful tool for building, training, and deploying machin
   - [Project Overview](#project-overview)
   - [Datasets](#datasets)
   - [Methodology](#methodology)
+  - [Data Analysis and Processing](#data-analysis-and-processing)
   - [Results](#results)
   - [Repository Structure](#repository-structure)
   - [Getting Started](#getting-started)
@@ -102,12 +103,43 @@ Both datasets are hosted on AWS S3 buckets and are publicly accessible via the A
 5. **Hyperparameter Tuning**: The model's hyperparameters are tuned for optimal performance.
 6. **Model Evaluation**: The model's effectiveness is assessed using the ROC-AUC curve and F1 score.
 
+## Data Analysis and Processing
+
+### MODIS Fire Detection Data Analysis
+
+The project involves in-depth analysis of the MODIS Fire Detection Dataset. Key steps in the data processing include:
+
+- **Reading and Cleaning Data**: The MODIS fire data (`fire_archive_M-C61_397859.csv`) is loaded and cleaned. This includes converting various columns to numeric types and parsing the acquisition date (`acq_date`) to a datetime format.
+- **Density and Box Plots**: We generate density plots for the `scan` and `track` columns to understand their distributions. Box plots are also created for `brightness` and `bright_t31` to analyze variations across different times of the day.
+- **Geospatial Analysis**: Latitude and longitude data are used to create scatter plots against `brightness` and `bright_t31` to visualize the spatial distribution of fire intensity.
+- **Continuous Fire Analysis**: We identify continuous fire events by assessing spatial proximity and temporal closeness of the fire observations.
+
+### NASA POWER Climate Data Analysis
+
+The NASA POWER climate dataset is also processed to extract meaningful insights:
+
+- **Data Integration**: Multiple CSV files corresponding to different regions and years (e.g., `POWER_Regional_Daily_20120101_20121231_001d10N_007d10N_100d28E_107d28E_LST.csv`) are read and merged for comprehensive analysis.
+- **Correlation with Fire Data**: Climate data such as temperature, precipitation, and humidity are correlated with fire incidents to identify potential patterns and triggers.
+
+### R Scripts and Analysis
+
+The R environment is utilized for data processing and analysis. Key packages include `ncdf4` for NetCDF manipulation, `terra` for geospatial analysis, `ggplot2` for plotting, `sf` for handling geospatial data, `tidyverse` for data manipulation, and `raster` for raster data analysis.
+
+
 ## Results
 
 - The correlation heatmap revealed significant relationships between certain climate features and the occurrence of peatfires.
 - The tuned CatBoost model showed promising classification results, as indicated by the ROC-AUC curve and F1 score.
 
 ## Repository Structure
+Below is a description of the key directories and files in this repository:
+- `Dashboard/`: A dedicated folder for hosting dashboard files, providing visualization and interactive analysis capabilities.
+- `Datasets/`: Includes the raw data files used in the project, such as MODIS fire data and NASA POWER climate data.
+- `Scripts/`: Python and R scripts for preprocessing, data analysis, and other tasks.
+- `Models/`: Stores the trained machine learning models and any results from hyperparameter tuning or model evaluation.
+- `requirements.txt`: Lists all the Python libraries required to run the project.
+- `README.md`: Provides an overview of the project, instructions on how to set up and run the code, and other important information.
+- `CONTRIBUTING.md`: Contains guidelines and instructions for contributing to the project.
 
 
 ## Getting Started
