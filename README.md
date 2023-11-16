@@ -57,22 +57,116 @@ Amazon SageMaker is a powerful tool for building, training, and deploying machin
 
 - [here](https://discord.gg/3XtmWkRFUx)
 
-## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-- [Contact Information](#contact-information)
+# Table of Contents
 
-## Installation
+- [AI Detects Peatfires in Sumatra: Unmasking with Technology](#ai-detects-peatfires-in-sumatra-unmasking-with-technology)
+  - [Project Overview](#project-overview)
+  - [Datasets](#datasets)
+  - [Methodology](#methodology)
+  - [Results](#results)
+  - [Repository Structure](#repository-structure)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Usage](#usage)
+  - [Future Work](#future-work)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
-Provide instructions on how to install and set up your project. Include any prerequisites, dependencies, and step-by-step installation guides.
 
+# AI Detects Peatfires in Sumatra: Unmasking with Technology
+
+This project integrates MODIS fire detection data with climate data from the NASA POWER dataset, utilizing Amazon SageMaker for analysis and modeling. The goal is to identify potential peatfire hotspots in Sumatra by analyzing and modeling environmental data.
+
+## Project Overview
+
+Peatfires contribute to significant environmental damage and carbon emissions. Early detection and accurate prediction of such fires are crucial for taking timely action. This project applies machine learning techniques to satellite and climate data to predict peatfire hotspots.
+
+## Datasets
+
+The datasets used in this project include:
+
+- **MODIS Fire Detection Dataset**: Contains satellite observations of active fires and thermal anomalies.
+- **NASA POWER Climate Dataset**: Provides meteorological and solar data designed for renewable energy, agroclimatology, and other climate-related research.
+
+Both datasets are hosted on AWS S3 buckets and are publicly accessible via the AWS Open Data Program.
+
+## Methodology
+
+1. **Data Extraction**: Data is extracted from the S3 buckets directly into a SageMaker notebook instance.
+2. **Data Integration**: The extracted MODIS and NASA POWER datasets are integrated within the notebook.
+3. **Correlation Analysis**: A correlation heatmap is generated to understand the relationship between various environmental features.
+4. **Model Training**: The integrated dataset is split into training and test sets. A CatBoost ensemble model is trained to classify locations as hotspots or not.
+5. **Hyperparameter Tuning**: The model's hyperparameters are tuned for optimal performance.
+6. **Model Evaluation**: The model's effectiveness is assessed using the ROC-AUC curve and F1 score.
+
+## Results
+
+- The correlation heatmap revealed significant relationships between certain climate features and the occurrence of peatfires.
+- The tuned CatBoost model showed promising classification results, as indicated by the ROC-AUC curve and F1 score.
+
+## Repository Structure
+
+
+## Getting Started
+
+To get started with this project, you'll need to set up an AWS account and configure access to the S3 buckets containing the MODIS and NASA POWER datasets.
+
+### Prerequisites
+
+- Amazon SageMaker
+- AWS S3 access
+- Python 3.6+
+- Required Python libraries: `boto3`, `pandas`, `numpy`, `sagemaker`, `catboost`, `matplotlib`, `seaborn`
+
+### Installation
+
+Clone this repository using Git:
 ```shell
 # Example installation commands
 $ git clone https://github.com/debsankarde/UN-Datathon2023.git
 $ cd UN-Datathon2023
 $ npm install
+
+
+Install the required libraries:
+pip install -r requirements.txt
+
+
+### Usage
+
+Launch the Jupyter notebooks within the `notebooks` directory to explore data analysis and model training:
+
+
+## Future Work
+
+Going forward, the project aims to incorporate Enhanced Vegetation Index (EVI) data to enhance the understanding and prediction of peatfires. The key areas of focus for future work include:
+
+- **Integration of EVI Data**: Incorporating EVI data into our dataset will enable us to monitor vegetation health and density over time. This will provide valuable insights into the impact of peatfires on vegetation loss and recovery.
+
+- **Correlation Between EVI and Fire Incidents**: Analyzing the relationship between EVI changes and fire incidents will help in understanding how fires affect vegetation over different timescales and geographical areas.
+
+- **Predictive Modeling of Vegetation Impact**: Leveraging machine learning models to predict the impact of peatfires on vegetation. This includes assessing the risk and severity of vegetation loss due to fires.
+
+- **Real-Time Monitoring System**: Developing a real-time monitoring system that uses EVI data to provide early warnings about potential vegetation loss due to peatfires.
+
+- **Long-Term Ecological Analysis**: Conducting a long-term analysis of the ecological impact of peatfires on the Sumatra region, using the integrated dataset of fire incidents, climate data, and EVI.
+
+These enhancements aim to provide a more comprehensive understanding of the environmental impact of peatfires, contributing to more effective prevention and mitigation strategies.
+
+## Contributing
+
+Contributions to this project are welcome. Please refer to the `CONTRIBUTING.md` for guidelines.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+## Acknowledgments
+
+- NASA POWER for providing open access to climate datasets.
+- MODIS Fire Detection Dataset contributors.
+- Amazon Web Services for hosting the datasets and SageMaker platform.
+
