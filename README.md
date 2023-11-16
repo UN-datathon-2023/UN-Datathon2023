@@ -78,6 +78,7 @@ Amazon SageMaker is a powerful tool for building, training, and deploying machin
 
 
 # AI Detects Peatfires in Sumatra: Unmasking with Technology
+ ![Fire in Sumatra](https://onecms-res.cloudinary.com/image/upload/s--lgoCHk2D--/c_fill,g_auto,h_468,w_830/fl_relative,g_south_east,l_mediacorp:cna:watermark:2021-08:cna,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2023/09/27/KARHUTLA%201.jpg?itok=Cb3aLBxe)
 
 This project integrates MODIS fire detection data with climate data from the NASA POWER dataset, utilizing Amazon SageMaker for analysis and modeling. The goal is to identify potential peatfire hotspots in Sumatra by analyzing and modeling environmental data.
 
